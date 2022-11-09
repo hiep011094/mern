@@ -1,0 +1,279 @@
+@import "../../../mixin";
+.c-header {
+    padding: 20px 40px;
+    box-shadow: 0 10px 15px rgba(25, 25, 25 , 0.1);
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    background: #fff;
+    @include res(pc-s) {
+        padding: 20px;
+    }
+    @include res(tb) {
+        padding: 20px 80px 20px 20px;
+    }
+    @include res(sp) {
+        padding: 15px 70px 15px 20px;
+    }
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__left {
+        display: flex;
+        align-items: center;
+        .logo {
+            display: flex;
+            align-items: center;
+            max-width: 200px;
+            width: 100%;
+            a{
+                display: flex;
+                align-items: center;
+            }
+            img {
+                width: 100%;
+            }
+        }
+    }
+    &__right {
+        display: flex;
+        align-items: center;
+        @include res(sp) {
+            margin-left: 15px;
+        }
+        .icon {
+            display: flex;
+            li {
+                margin-right: 0.5vw;
+            }
+            a,
+            span {
+                display: flex;
+                width: 40px;
+                height: 40px;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid #dfdfdf;
+                border-radius: 100%;
+                position: relative;
+                @include res(sp) {
+                    width: 35px;
+                    height: 35px;
+                }
+                .num {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 20px;
+                    height: 20px;
+                    font-size: 0.8rem;
+                    letter-spacing: 0.1em;
+                    position: absolute;
+                    right: -8px;
+                    top: -8px;
+                    background: red;
+                    border: none;
+                    color: #fff;
+                    font-weight: 700;
+                    z-index: 1;
+                    padding: 1px 0 0 1px;
+                    @include res(sp) {
+                        width: 18px;
+                        height: 18px;
+                    }
+                }
+            }
+            i {
+                font-size: 1.6rem;
+                @include res(sp) {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}
+.c-gnavi {
+    margin-left: 4vw;
+    @include res(tb) {
+        // display: none;
+        position: fixed;
+        left: 0;
+        top: 80px;
+        padding: 0;
+        width: 100%;
+        height: 0;
+        margin-left: 0;
+        transition: 0.5s;
+        overflow: hidden;
+        z-index: 11;
+        opacity: 0;
+        background: #fff;
+        border-top: 1px solid #dfdfdf;
+        &.active {
+            height: calc(100% - 80px);
+            opacity: 1;
+        }
+    }
+    @include res(sp) {
+        top: 70px;
+        &.active {
+            height: calc(100% - 70px);
+            opacity: 1;
+        }
+    }
+    &__content {
+        ul {
+            display: flex;
+            align-items: center;
+            @include res(tb) {
+                display: block;
+            }
+            @include res(sp) {
+                &.icon {
+                    display: flex;
+                    justify-content: center;
+                    li {
+                        a,
+                        span {
+                            border: none;
+                        }
+                    }
+                }
+            }
+            li {
+                margin-left: 2.5vw;
+                @include res(tb) {
+                    margin-left: 0;
+                }
+                &:first-child {
+                    margin-left: 0;
+                }
+                a,
+                span {
+                    font-weight: 500;
+                    @include res(tb) {
+                        border-bottom: 1px solid #dfdfdf;
+                        display: block;
+                        width: 100%;
+                        box-sizing: border-box;
+                        padding: 10px 20px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+.c-user {
+    margin-left: 50px;
+    position: relative;
+    z-index: 1;
+    @include res(pc-s) {
+        margin-left: 30px;
+    }
+    @include res(sp) {
+        margin-left: 10px;
+    }
+    .avatar {
+        display: block;
+        width: 50px;
+        height: 50px;
+        border: 1px solid #dfdfdf;
+        border-radius: 100%;
+        cursor: pointer;
+        overflow: hidden;
+        @include res(tb) {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    ul {
+        position: absolute;
+        right: -40px;
+        top: 70px;
+        width: 200px;
+        border: 1px solid #dfdfdf;
+        overflow: hidden;
+        height: 0;
+        transition: 0.5s ease-in-out;
+        opacity: 0;
+        background: #fff;
+        @include res(tb) {
+            top: 60px;
+            right: -80px;
+        }
+        @include res(sp) {
+            top: 55px;
+            right: -70px;
+        }
+        &.active {
+            opacity: 1;
+        }
+        li {
+            border-bottom: 1px solid #dfdfdf;
+        }
+        a {
+            width: 100%;
+            display: block;
+            box-sizing: border-box;
+            padding: 5px 30px;
+            text-align: right;
+            font-weight: 500;
+            i {
+                font-size: 1.2rem;
+                margin-left: 10px;
+            }
+        }
+    }
+}
+.c-toggle {
+    display: none;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 10px;
+    top: 14px;
+    position: fixed;
+    @include res(tb) {
+        display: block;
+    }
+    @include res(sp) {
+        top: 10px;
+    }
+    &::before {
+        content: "";
+        width: 28px;
+        height: 28px;
+        background: linear-gradient(#1d2547, #1d2547) no-repeat center;
+        background-size: 100% 3px;
+        position: absolute;
+        top: calc(50% + 5px);
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: 0.5s ease-in-out;
+    }
+    &::after {
+        content: "";
+        width: 28px;
+        height: 28px;
+        background: linear-gradient(#1d2547, #1d2547) no-repeat center;
+        background-size: 100% 3px;
+        position: absolute;
+        top: calc(50% - 5px);
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: 0.5s ease-in-out;
+    }
+    &.active {
+        &::before {
+            transform: translate(-50%, calc(-50% - 5px)) rotate(-45deg);
+        }
+        &::after {
+            transform: translate(-50%, calc(-50% + 5px)) rotate(45deg);
+        }
+    }
+}

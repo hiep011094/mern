@@ -1,0 +1,41 @@
+$family: "Kanit", sans-serif;
+$family-title: "Cormorant SC", serif;
+$breakpoints: (
+    pc-l: (
+        max-width: 1920px,
+    ),
+    pc-m: (
+        max-width: 1600px,
+    ),
+    pc-s: (
+        max-width: 1200px,
+    ),
+    tb: (
+        max-width: 1023px,
+    ),
+    sp: (
+        max-width: 768px,
+    ),
+    sp-425: (
+        max-width: 425px,
+    ),
+    sp-374: (
+        max-width: 374px,
+    ),
+) !default;
+
+@mixin res($breakpoint) {
+    // If the key exists in the map
+    @if map-has-key($breakpoints, $breakpoint) {
+        // Prints a media query based on the value
+        @media #{inspect(map-get($breakpoints, $breakpoint))} {
+            @content;
+        }
+    }
+
+    // If the key doesn't exist in the map
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+          + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+}

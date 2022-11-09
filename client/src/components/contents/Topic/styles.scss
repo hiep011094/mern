@@ -1,0 +1,42 @@
+@import "../../../mixin";
+.c-topic{
+    background: #EFF5F8;
+    padding: 14px 20px;
+    @include res(sp){
+        padding: 10px 20px;
+    }
+    ul{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        li{
+            color: #949EA5;
+            line-height: 1.3;
+            padding: 5px 15px;
+            position: relative;            
+            &::after{
+                content: "";
+                width: 6px;
+                height: 6px;
+                border-top: 1px solid #949EA5;
+                border-right: 1px solid #949EA5;
+                position: absolute;
+                right: -2px;
+                top: 12px;
+                transform: rotate(45deg);
+            }
+            &:last-child{
+                a{
+                    cursor: default;
+                    pointer-events: none;
+                    &:hover{
+                        opacity: 1;
+                    }
+                }
+                &::after{
+                    display: none;
+                }
+            }
+        }
+    }
+}

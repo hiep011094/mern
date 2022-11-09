@@ -1,0 +1,156 @@
+@import "../../../mixin";
+
+.c-grid {
+    display: grid;
+    &--1 {
+        grid-template-columns: 100%;
+        @include res(sp) {
+            grid-template-columns: 100%;
+        }
+    }
+    &--2 {
+        grid-template-columns: 50% 50%;
+        @include res(sp-425) {
+            grid-template-columns: 100%;
+        }
+    }
+    &--3 {
+        grid-template-columns: calc(100%/3) calc(100%/3) calc(100%/3);
+        @include res(sp) {
+            grid-template-columns: 50% 50%;
+        }
+        @include res(sp-425) {
+            grid-template-columns: 100%;
+        }
+    }
+    &--4 {
+        grid-template-columns: 25% 25% 25% 25%;
+        @include res(sp) {
+            grid-template-columns: 50% 50%;
+        }
+        @include res(sp-425) {
+            grid-template-columns: 100%;
+        }
+    }
+    &.mr-10{
+        width: calc(100% + 10px);
+        margin-left: -5px;
+        >*{
+            margin: 5px;
+        }
+    }
+    &.mr-20{
+        width: calc(100% + 20px);
+        margin-left: -10px;
+        >*{
+            margin: 10px;
+        }
+    }
+    &.mr-30{
+        width: calc(100% + 30px);
+        margin-left: -15px;
+        >*{
+            margin: 15px;
+        }
+    }
+    &.mr-40{
+        width: calc(100% + 40px);
+        margin-left: -20px;
+        >*{
+            margin: 20px;
+        }
+    }
+    
+    @include res(pc-s){
+        &.mr_pc_s-10{
+            width: calc(100% + 10px);
+            margin-left: -5px;
+            >*{
+                margin: 5px;
+            }
+        }
+        &.mr_pc_s-20{
+            width: calc(100% + 20px);
+            margin-left: -10px;
+            >*{
+                margin: 10px;
+            }
+        }
+        &.mr_pc_s-30{
+            width: calc(100% + 30px);
+            margin-left: -15px;
+            >*{
+                margin: 15px;
+            }
+        }
+        &.mr_pc_s-40{
+            width: calc(100% + 40px);
+            margin-left: -20px;
+            >*{
+                margin: 20px;
+            }
+        }
+    }
+
+    @include res(tb){
+        &.mr_tb-10{
+            width: calc(100% + 10px);
+            margin-left: -5px;
+            >*{
+                margin: 5px;
+            }
+        }
+        &.mr_tb-20{
+            width: calc(100% + 20px);
+            margin-left: -10px;
+            >*{
+                margin: 10px;
+            }
+        }
+        &.mr_tb-30{
+            width: calc(100% + 30px);
+            margin-left: -15px;
+            >*{
+                margin: 15px;
+            }
+        }
+        &.mr_tb-40{
+            width: calc(100% + 40px);
+            margin-left: -20px;
+            >*{
+                margin: 20px;
+            }
+        }
+    }
+
+    @include res(sp){
+        &.mr_sp-10{
+            width: calc(100% + 10px);
+            margin-left: -5px;
+            >*{
+                margin: 5px;
+            }
+        }
+        &.mr_sp-20{
+            width: calc(100% + 20px);
+            margin-left: -10px;
+            >*{
+                margin: 10px;
+            }
+        }
+        &.mr_sp-30{
+            width: calc(100% + 30px);
+            margin-left: -15px;
+            >*{
+                margin: 15px;
+            }
+        }
+        &.mr_sp-40{
+            width: calc(100% + 40px);
+            margin-left: -20px;
+            >*{
+                margin: 20px;
+            }
+        }
+    }
+}

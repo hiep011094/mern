@@ -1,0 +1,60 @@
+@import "../../../mixin";
+.input-number{
+    position: relative;
+    display: inline-block;
+    input{
+        font-size: 1.6rem;
+        padding: 16px 30px;
+        border: none;
+        border: 1px solid #dfdfdf;
+        color: #333;
+        width: 120px;
+        text-align: center;
+        font-family: inherit;
+        border-radius: 5px;
+        @include res(tb){
+            width: 100px;
+            padding: 12px 30px;
+            font-size: 1.4rem;
+        }
+        @include res(sp){
+            font-size: 1.2rem;
+        }
+    }
+    .minus{
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        cursor: pointer;
+        transition: 0.5s;
+        font-size: 1rem;
+        padding: 5px 10px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        color: #dfdfdf;
+        &:hover{
+            opacity: 0.8;
+        }
+    }
+    .plus{
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        cursor: pointer;
+        transition: 0.5s;
+        font-size: 1rem;
+        padding: 5px 10px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        color: #dfdfdf;
+        &:hover{
+            opacity: 0.8;
+        }
+    }
+}

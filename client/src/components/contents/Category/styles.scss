@@ -1,0 +1,71 @@
+@import "../../../mixin";
+.c-category {
+    padding-top: 60px;
+    @include res(sp) {
+        padding: 60px 20px 0 20px;
+    }
+    .box {
+        position: relative;
+        overflow: hidden;
+        figure {
+            overflow: hidden;
+            img {
+                width: 100%;
+                transition: 0.5s;
+            }
+        }
+        .c-btn01 {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, calc(-50% - 20px));
+            opacity: 0;
+            transition: 0.5s;
+            @include res(pc-m) {
+                font-size: 1.6rem;
+                padding: 15px 20px 17px 20px;
+            }
+            @include res(tb) {
+                font-size: 1.4rem;
+                min-width: 110px;
+                padding: 10px 20px 12px 20px;
+            }
+        }
+        .ttl {
+            width: 100%;
+            color: #fff;
+            background: rgba(29, 37, 71, 0.5);
+            padding: 20px 0;
+            display: block;
+            cursor: pointer;
+            font-size: 3rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            font-family: $family-title;
+            position: absolute;
+            bottom: 0;
+            transform: translateY(100%);
+            left: 0;
+            text-align: center;
+            transition: 0.5s;
+            @include res(sp) {
+                font-size: 1.8rem;
+                padding: 10px 0;
+            }
+        }
+        &:hover {
+            figure {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+            .ttl {
+                transform: translateY(0);
+            }
+            .c-btn01 {
+                transform: translate(-50%, -50%);
+                opacity: 1;
+            }
+        }
+    }
+}

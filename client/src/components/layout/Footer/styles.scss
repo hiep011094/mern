@@ -1,0 +1,184 @@
+@import "../../../mixin";
+.c-footer {
+    &__top {
+        background: #f7f7fd;
+        padding: 80px 20px;
+        @include res(pc-s){
+            padding: 60px 20px;
+        }
+        @include res(sp){
+            padding: 50px 20px;
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+
+            .icon {
+                display: inline-block;
+                margin-bottom: 25px;
+            }
+
+            p {
+                font-size: 2rem;
+                line-height: 1.2;
+                font-weight: 700;
+                margin-bottom: 10px;
+                letter-spacing: 0.05em;
+                @include res(pc-s){
+                    font-size: 1.8rem;
+                }
+                @include res(sp){
+                    font-size: 1.6rem;
+                }
+            }
+
+            span:not(.icon) {
+                display: block;
+                font-weight: 500;
+                opacity: 0.8;
+                line-height: 1.4;
+                letter-spacing: 0.05em;
+                @include res(pc-s){
+                    font-size: 1.4rem;
+                }
+                @include res(sp){
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+
+    &__inner {
+        color: #fff;
+        background: #1D2547;
+        padding: 100px 20px;
+        @include res(pc-s){
+            padding: 80px 20px 40px 20px;
+        }
+        @include res(sp){
+            padding: 60px 20px 20px 20px;
+        }
+    }
+
+    &__content {
+        max-width: 1600px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        @include res(sp){
+            display: block;
+        }
+        .left {
+            width: 300px;
+            padding-right: 60px;
+            @include res(sp){
+                width: 100%;
+                margin-bottom: 60px;
+                padding-right: 0;
+            }
+            @include res(sp-425){
+                text-align: center;
+            }  
+            .logo {
+                display: inline-block;
+                margin-bottom: 20px;
+            }
+
+            p {
+                font-size: 1.4rem;
+                line-height: 1.8;
+                margin-bottom: 20px;
+                letter-spacing: 0;
+            }
+            .icon{
+                display: flex;  
+                @include res(sp-425){
+                    justify-content: center;
+                }              
+                li{
+                    margin-right: 15px;
+                    a{
+                        display: flex;
+                        width: 40px;
+                        height: 40px;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 100%;
+                        border: 1px solid #fff;
+                        padding: 0 0 0 2px;
+                        &:hover{
+                            background: #fff;
+                            color: #1D2547;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+
+        .right {
+            width: calc(100% - 300px);
+            display: grid;
+            grid-template-columns: 25% 25% 25% 25%;
+            @include res(pc-s){
+                grid-template-columns: 50% 50%;
+            }
+            @include res(sp){
+                width: 100%;
+            }
+            @include res(sp-425){
+                grid-template-columns: 100%;
+                text-align: center;
+            }
+            &__item{
+                padding: 0 15px 30px 15px;
+                .ttl{
+                    font-size: 1.8rem;
+                    font-weight: 500;
+                    line-height: 1.2;
+                    margin-bottom: 30px;
+                    letter-spacing: 0;
+                    position: relative;
+                    &::after{
+                        content: "";
+                        width: 50px;
+                        height: 1px;
+                        background: #fff;
+                        position: absolute;
+                        left: 0;
+                        bottom: -18px;
+                        @include res(sp-425){
+                            left: 50%;
+                            transform: translateX(-50%);
+                        }
+                    }
+                }
+                ul{
+                    li{
+                        line-height: 1.2;
+                        margin-bottom: 15px;
+                        a{
+                            font-size: 1.4rem;
+                            letter-spacing: 0;
+                        }
+                    }
+                }
+                &:last-child{
+                    padding-right: 0;
+                }
+            }
+        }
+        
+    }
+    .coppy{
+        font-size: 1.2rem;
+        text-align: center;
+        padding: 20px 20px;
+        background: #1D2547;
+        color: #fff;
+        border-top: 1px solid #ccc;
+        @include res(sp){
+            padding: 10px 20px;
+        }
+    }
+}

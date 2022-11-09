@@ -1,0 +1,83 @@
+@import "../../../mixin";
+
+.c-slider {
+    position: relative;
+
+    &__item {
+        img {
+            width: 100%;
+            height: calc(100vh - 90px);
+            object-fit: cover;
+            object-position: center;
+            @include res(pc-s) {
+                height: auto;
+            }
+            @include res(sp) {
+                min-height: 300px;
+            }
+        }
+    }
+
+    .slick-dots {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+
+        @include res(tb) {
+            bottom: 20px;
+        }
+
+        li {
+            display: inline-block;
+            margin: 0 15px;
+
+            @include res(tb) {
+                margin: 0 10px;
+            }
+        }
+
+        button {
+            // background: transparent;
+            font-size: 0;
+            height: 12px;
+            width: 12px;
+            box-sizing: border-box;
+            padding: 0;
+            border: none;
+            border-radius: 10px;
+            position: relative;
+            cursor: pointer;
+
+            @include res(tb) {
+                height: 8px;
+                width: 8px;
+            }
+
+            &::after {
+                display: none;
+                content: "";
+                border: 1px solid #fff;
+                width: calc(100% + 15px);
+                height: calc(100% + 15px);
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                border-radius: 100%;
+
+                @include res(tb) {
+                    width: calc(100% + 10px);
+                    height: calc(100% + 10px);
+                }
+            }
+        }
+
+        .slick-active {
+            button::after {
+                display: block;
+            }
+        }
+    }
+}

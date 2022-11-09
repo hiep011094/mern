@@ -1,0 +1,50 @@
+@import "../../../mixin";
+.p-top{
+    
+    &1{
+        padding: 120px 0;
+        @include res(sp){
+            padding: 60px 0;
+        }
+        .c-ttl01{
+            margin-bottom: 50px;
+            @include res(sp){
+                margin-bottom: 30px;
+            }
+        }
+        .c-btn02{
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 50px;
+        }
+    }
+    &2{
+        position: relative;
+        figure{
+            img{
+                width: 100%;
+                min-height: 400px;
+                object-fit: cover;
+                object-position: center;
+                @include res(sp-425){
+                    min-height: 300px;
+                }
+            }
+        }
+        &__inner{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            z-index: 1;
+            text-align: center;
+            .c-ttl01{
+                font-weight: 400;
+                color: #fff;
+                margin-bottom: 30px;
+            }
+        }
+    }
+    
+}

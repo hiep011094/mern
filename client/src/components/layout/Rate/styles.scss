@@ -1,0 +1,13 @@
+.c-rate {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    li {
+        color: #ddd;
+        font-size: 1.4rem;
+
+        &.active {
+            color: #fbba42;
+        }
+    }
+}

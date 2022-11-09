@@ -1,0 +1,10 @@
+@import "../../../mixin";
+.c-postnews{
+    padding: 20px 0;
+    @include res(pc-s){
+        padding: 10px 0 ;
+    }
+    @include res(sp-425){
+        padding: 10px 20px ;
+    }
+}
